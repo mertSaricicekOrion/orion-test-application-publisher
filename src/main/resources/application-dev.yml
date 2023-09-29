@@ -1,0 +1,19 @@
+spring:
+  profiles:
+    active: dev
+  data:
+    redis:
+      host: localhost
+      connect-timeout: 10000
+      timeout: 300
+      password: null
+      port: 6379
+  kafka:
+    producer:
+      bootstrap-servers: "localhost:9092"
+    consumer:
+      group-id: foo
+      bootstrap-servers: "localhost:9092"
+logging:
+  level:
+    root: info
