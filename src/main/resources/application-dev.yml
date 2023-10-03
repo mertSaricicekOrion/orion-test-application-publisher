@@ -11,6 +11,8 @@ spring:
   kafka:
     producer:
       bootstrap-servers: "localhost:9092"
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: io.confluent.kafka.serializers.KafkaAvroSerializer
     consumer:
       group-id: foo
       bootstrap-servers: "localhost:9092"

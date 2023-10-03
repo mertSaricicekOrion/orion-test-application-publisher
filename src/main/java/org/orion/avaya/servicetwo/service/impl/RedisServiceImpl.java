@@ -1,7 +1,7 @@
 package org.orion.avaya.servicetwo.service.impl;
 
 
-import org.orion.avaya.servicetwo.model.Call;
+import org.orion.avaya.servicetwo.model.CallEvent;
 import org.orion.avaya.servicetwo.model.CallStatus;
 import org.orion.avaya.servicetwo.service.RedisService;
 import org.redisson.api.RAtomicLong;
@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class RedisServiceImpl implements RedisService {
     private final RedissonClient redissonClient;
-    private final RMap<String, Call> callMap;
+    private final RMap<String, CallEvent> callMap;
 
     @Autowired
     public RedisServiceImpl(RedissonClient redissonClient) {
@@ -22,7 +22,7 @@ public class RedisServiceImpl implements RedisService {
     }
 
     @Override
-    public void save(Call call) {
+    public void save(CallEvent call) {
         RAtomicLong atomicLong = redissonClient.getAtomicLong("unique_id_counter");
         call.setId(atomicLong.incrementAndGet());
         callMap.fastPut(String.valueOf(atomicLong), call);
@@ -30,12 +30,12 @@ public class RedisServiceImpl implements RedisService {
 
     @Override
     public void update(String callId, CallStatus callStatus) {
-            Call call = callMap.get(callId);
+        CallEvent call = callMap.get(callId);
         if (call != null) {
             call.setCallStatus(callStatus);
             callMap.fastPut(callId, call);
         } else {
-          //TODO: handle if callId doesn't exists
+            //TODO: handle if callId doesn't exists
         }
     }
 

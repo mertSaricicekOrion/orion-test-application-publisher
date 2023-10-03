@@ -1,0 +1,41 @@
+{
+  "type": "record",
+  "name": "CallEvent",
+  "fields": [
+    {
+      "name": "id",
+      "type": "long"
+    },
+    {
+      "name": "telephoneNumber",
+      "type": "string"
+    },
+    {
+      "name": "locale",
+      "type": "string"
+    },
+    {
+      "name": "trunkName",
+      "type": "string"
+    },
+    {
+      "name": "timestamp",
+      "type": "string"
+    },
+    {
+      "name": "callStatus",
+      "type": {
+        "type": "enum",
+        "name": "CallStatus",
+        "symbols": [
+          "INVITED",
+          "ACTIVE",
+          "PROCESSED",
+          "CANCELED",
+          "ENDED",
+          "ERROR"
+        ]
+      }
+    }
+  ]
+}

@@ -1,8 +1,6 @@
 package org.orion.avaya.servicetwo.api;
 
 import org.orion.avaya.servicetwo.api.dto.CallDTO;
-import org.orion.avaya.servicetwo.model.CallCancelEvent;
-import org.orion.avaya.servicetwo.model.CallEndEvent;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;

@@ -1,0 +1,14 @@
+{
+  "type": "record",
+  "name": "CallCancelEvent",
+  "fields": [
+    {
+      "name": "reason",
+      "type": "string"
+    },
+    {
+      "name": "timestamp",
+      "type": "string"
+    }
+  ]
+}
