@@ -119,7 +119,7 @@
                         </goals>
                         <configuration>
                             <sourceDirectory>${project.basedir}/src/main/resources/avro/</sourceDirectory>
-                            <outputDirectory>${project.basedir}/src/main/java/</outputDirectory>
+                            <outputDirectory>${project.basedir}/src/main/java/org/orion/avaya/servicetwo/model</outputDirectory>
                         </configuration>
                     </execution>
                 </executions>

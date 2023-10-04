@@ -4,6 +4,8 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.orion.avaya.servicetwo.api.CallApi;
 import org.orion.avaya.servicetwo.api.dto.CallDTO;
+import org.orion.avaya.servicetwo.model.CallCancelEvent;
+import org.orion.avaya.servicetwo.model.CallEndEvent;
 import org.orion.avaya.servicetwo.service.CallService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;

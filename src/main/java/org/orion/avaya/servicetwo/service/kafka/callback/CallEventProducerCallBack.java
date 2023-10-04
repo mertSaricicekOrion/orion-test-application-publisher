@@ -8,7 +8,7 @@ import org.apache.kafka.clients.producer.RecordMetadata;
 public class CallEventProducerCallBack implements Callback {
     @Override
     public void onCompletion(RecordMetadata metadata, Exception exception) {
-        if (exception != null) {
+        if (exception == null) {
             log.info("{} offset, {} topic is sent successfully", metadata.offset(), metadata.topic());
         } else {
             exception.printStackTrace();
